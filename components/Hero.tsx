@@ -10,7 +10,7 @@ const stats = [
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-24 pb-32 md:pt-20 md:pb-20 overflow-hidden">
       {/* Background Grid */}
       <div className="absolute inset-0 z-0 opacity-[0.03]" style={{
         backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
@@ -21,11 +21,11 @@ const Hero: React.FC = () => {
       <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-electric/[0.07] rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-cyan-500/[0.05] rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-6 relative z-20 w-full">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-16">
           <div className="max-w-4xl flex-1">
             <ScrollReveal>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-slate-300 text-xs font-semibold tracking-wider uppercase mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-slate-300 text-xs font-semibold tracking-wider uppercase mb-6 md:mb-8">
                 <span className="relative w-1.5 h-1.5 rounded-full bg-electric">
                   <span className="absolute inset-0 rounded-full bg-electric animate-ping" />
                 </span>
@@ -34,33 +34,33 @@ const Hero: React.FC = () => {
             </ScrollReveal>
 
             <ScrollReveal delay={100}>
-              <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tighter leading-[1.05] mb-4">
+              <h1 className="font-display text-4xl md:text-7xl lg:text-8xl font-bold text-white tracking-tighter leading-[1.05] mb-3 md:mb-4">
                 Claridad Operativa. <br />
                 <span className="text-shimmer">Rentabilidad Real.</span>
               </h1>
             </ScrollReveal>
 
             <ScrollReveal delay={150}>
-              <p className="text-xs font-semibold text-electric/60 tracking-[0.25em] uppercase mb-8">
+              <p className="text-xs font-semibold text-electric/60 tracking-[0.25em] uppercase mb-5 md:mb-8">
                 Bajío · Centro · Norte de México
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
-              <p className="text-lg md:text-2xl text-slate-400 max-w-3xl leading-relaxed mb-10 font-light">
+              <p className="text-base md:text-2xl text-slate-400 max-w-3xl leading-relaxed mb-8 md:mb-10 font-light">
                 Transformamos el caos operativo de su empresa en una estructura digital de alto rendimiento. Llevamos las estrategias tecnológicas de las top industrias al corazón de las PyMEs.
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={300}>
-              <div className="flex flex-col sm:flex-row gap-4 items-start">
-                <a href="#contact" className="group relative px-8 py-4 bg-white text-night font-bold rounded-full text-lg overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]">
-                  <span className="relative z-10 flex items-center gap-2">
-                    Agendar Diagnóstico de Claridad
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start">
+                <a href="#contact" className="group relative px-6 md:px-8 py-4 bg-white text-night font-bold rounded-full text-base md:text-lg overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(255,255,255,0.15)] text-center">
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    Agendar Diagnóstico
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </a>
-                <a href="#cases" className="px-8 py-4 glass glass-hover text-white rounded-full text-lg transition-all flex items-center gap-2">
+                <a href="#cases" className="px-6 md:px-8 py-4 glass glass-hover text-white rounded-full text-base md:text-lg transition-all flex items-center justify-center gap-2">
                   Ver Casos de Éxito
                   <ChevronRight className="w-4 h-4 opacity-50" />
                 </a>
@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
             </ScrollReveal>
           </div>
 
-          {/* Floating Stats */}
+          {/* Floating Stats — desktop only */}
           <ScrollReveal delay={400} className="hidden lg:flex flex-col gap-4 min-w-[200px]">
             {stats.map((stat, i) => (
               <div
@@ -86,13 +86,13 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 scroll-indicator">
+      {/* Scroll Indicator — hidden on mobile to avoid overlap */}
+      <div className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex-col items-center gap-2 scroll-indicator pointer-events-none">
         <span className="text-[10px] text-slate-600 uppercase tracking-[0.2em] font-semibold">Descubra cómo</span>
         <ChevronDown className="w-4 h-4 text-slate-600" />
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-night to-transparent z-10" />
+      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-night to-transparent z-10 pointer-events-none" />
     </section>
   );
 };
