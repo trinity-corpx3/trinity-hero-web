@@ -3,7 +3,7 @@ import { ArrowRight, ChevronRight, ChevronDown, Building2, Zap, TrendingUp } fro
 import ScrollReveal from './ui/ScrollReveal';
 
 const stats = [
-  { icon: <Building2 className="w-4 h-4" />, value: '5+', label: 'Sectores', animClass: 'float-animation' },
+  { icon: <Building2 className="w-4 h-4" />, value: '6+', label: 'Sectores', animClass: 'float-animation' },
   { icon: <Zap className="w-4 h-4" />, value: '80%', label: 'Ahorro Promedio', animClass: 'float-animation-delayed' },
   { icon: <TrendingUp className="w-4 h-4" />, value: '+40%', label: 'Alcance', animClass: 'float-animation-delayed-2' },
 ];
@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
 
             <ScrollReveal delay={150}>
               <p className="text-xs font-semibold text-electric/60 tracking-[0.25em] uppercase mb-8">
-                Desde el Bajío para las PyMEs de México
+                Bajío · Centro · Norte de México
               </p>
             </ScrollReveal>
 

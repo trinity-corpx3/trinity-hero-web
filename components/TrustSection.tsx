@@ -1,5 +1,5 @@
 import React from 'react';
-import { HardHat, Car, Wrench, ShoppingBag, Fuel } from 'lucide-react';
+import { HardHat, Car, Wrench, ShoppingBag, Fuel, Hotel } from 'lucide-react';
 import ScrollReveal from './ui/ScrollReveal';
 
 const clients = [
@@ -8,6 +8,7 @@ const clients = [
   { icon: <Wrench className="w-6 h-6" />, sector: 'Mantenimiento', label: 'Servicios Industriales' },
   { icon: <ShoppingBag className="w-6 h-6" />, sector: 'Calzado', label: 'Plantas Manufactureras' },
   { icon: <Fuel className="w-6 h-6" />, sector: 'Gasolineras', label: 'Estaciones y Retail' },
+  { icon: <Hotel className="w-6 h-6" />, sector: 'Hospitalidad', label: 'Hoteles y Moteles' },
 ];
 
 const TrustSection: React.FC = () => {
@@ -40,7 +41,7 @@ const TrustSection: React.FC = () => {
 
         <ScrollReveal delay={200}>
           <p className="text-center text-slate-700 text-xs mt-8">
-            + empresas en el Bajío y Centro de México
+            + empresas en el Bajío, Centro y Norte de México
           </p>
         </ScrollReveal>
       </div>

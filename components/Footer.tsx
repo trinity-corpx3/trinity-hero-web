@@ -1,6 +1,8 @@
 import React from 'react';
 import { Logo } from './ui/Logo';
-import { Linkedin, Twitter, Mail, MapPin } from 'lucide-react';
+import { Mail, MessageCircle, MapPin } from 'lucide-react';
+
+const WHATSAPP_NUMBER = '527222921659';
 
 const Footer: React.FC = () => {
   return (
@@ -14,21 +16,28 @@ const Footer: React.FC = () => {
             </div>
             <p className="text-slate-400 max-w-sm mb-4">
               Consultoría Tecnológica Boutique.<br/>
-              Referente #1 en PyMEs para el Bajío y Centro de México.
+              Referente #1 en PyMEs para el Bajío, Centro y Norte de México.
             </p>
-            <div className="flex items-center gap-2 text-slate-500 text-sm mb-8">
-              <MapPin className="w-4 h-4" />
-              <span>León, Guanajuato — Hecho con precisión en México.</span>
+            <div className="flex items-start gap-2 text-slate-500 text-sm mb-8">
+              <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
+              <span>CDMX · Metepec · Toluca · Querétaro · Monterrey</span>
             </div>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full glass glass-hover flex items-center justify-center text-slate-400 hover:text-white transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full glass glass-hover flex items-center justify-center text-slate-400 hover:text-white transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full glass glass-hover flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+              <a
+                href="mailto:trinity.corpx3@gmail.com"
+                className="w-10 h-10 rounded-full glass glass-hover flex items-center justify-center text-slate-400 hover:text-white transition-colors"
+                aria-label="Email"
+              >
                 <Mail size={20} />
+              </a>
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola, me interesa un Diagnóstico de Claridad para mi empresa.')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full glass glass-hover flex items-center justify-center text-slate-400 hover:text-emerald-400 transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle size={20} />
               </a>
             </div>
           </div>

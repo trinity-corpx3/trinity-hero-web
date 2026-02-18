@@ -1,22 +1,19 @@
 import React, { useState, FormEvent } from 'react';
-import { MessageCircle, CheckCircle2, Loader2 } from 'lucide-react';
+import { MessageCircle, Loader2 } from 'lucide-react';
 import ScrollReveal from './ui/ScrollReveal';
 
 /*
  * ┌────────────────────────────────────────────────┐
  * │  CONFIGURACIÓN — Actualiza estos valores:      │
  * │                                                │
- * │  WHATSAPP_NUMBER: tu número con código país    │
- * │  Ejemplo: 524771234567 (52 = México)           │
- * │                                                │
  * │  WEB3FORMS_KEY: obtén uno gratis en            │
  * │  https://web3forms.com (solo email)            │
  * └────────────────────────────────────────────────┘
  */
-const WHATSAPP_NUMBER = '524771234567';
+const WHATSAPP_NUMBER = '527222921659';
 const WEB3FORMS_KEY = 'TU_ACCESS_KEY_AQUI';
 
-const sectors = ['Construcción', 'Autolavados', 'Manufactura', 'Retail / Gasolineras', 'Mantenimiento', 'Otro'];
+const sectors = ['Construcción', 'Autolavados', 'Manufactura', 'Retail / Gasolineras', 'Mantenimiento', 'Hoteles / Moteles', 'Otro'];
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error';
 

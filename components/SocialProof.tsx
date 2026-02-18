@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { HardHat, Car, Wrench, ShoppingBag, Fuel, Quote } from 'lucide-react';
+import { HardHat, Car, Wrench, ShoppingBag, Fuel, Hotel, Quote } from 'lucide-react';
 import ScrollReveal from './ui/ScrollReveal';
 
 const AnimatedCounter: React.FC<{ target: string; suffix?: string; duration?: number }> = ({
@@ -49,7 +49,7 @@ const AnimatedCounter: React.FC<{ target: string; suffix?: string; duration?: nu
 };
 
 const stats = [
-  { value: '5', suffix: '+', label: 'Sectores Transformados', icon: <HardHat className="w-5 h-5" /> },
+  { value: '6', suffix: '+', label: 'Sectores Transformados', icon: <HardHat className="w-5 h-5" /> },
   { value: '80', suffix: '%', label: 'Ahorro Promedio en Tiempo', icon: <Fuel className="w-5 h-5" /> },
   { value: '+40', suffix: '%', label: 'Incremento en Alcance', icon: <ShoppingBag className="w-5 h-5" /> },
   { value: '24', suffix: 'h', label: 'Cobro Post-Servicio', icon: <Wrench className="w-5 h-5" /> },

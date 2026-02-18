@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { HardHat, Car, Wrench, ShoppingBag, Gauge } from 'lucide-react';
+import { HardHat, Car, Wrench, ShoppingBag, Gauge, Hotel } from 'lucide-react';
 import ScrollReveal from './ui/ScrollReveal';
 import CursorGlow from './ui/CursorGlow';
 
@@ -192,6 +192,39 @@ const BentoGrid: React.FC = () => {
               <div className="pt-2 border-t border-white/5">
                 <span className="text-amber-400 font-bold block">80% Ahorro</span>
                 <span className="text-slate-500 text-xs">en tiempo administrativo.</span>
+              </div>
+            </CursorGlow>
+          </ScrollReveal>
+
+          {/* Card 6: Hotels & Motels */}
+          <ScrollReveal className="md:col-span-2" delay={600} enableZoom>
+            <CursorGlow className="h-full gradient-border glass glass-hover rounded-3xl p-8 transition-colors flex flex-col md:flex-row items-center gap-8">
+              <div className="flex-1">
+                <div className="w-12 h-12 rounded-full bg-violet-500/10 flex items-center justify-center text-violet-400 mb-6 border border-violet-500/20">
+                  <Hotel size={24} />
+                </div>
+                <h3 className="font-display text-2xl font-bold text-white mb-2">Hoteles & Moteles</h3>
+                <p className="text-slate-400 text-sm mb-4">
+                  Programa de lealtad y recompensas para huéspedes frecuentes, integrado con un sistema de gestión de habitaciones para optimizar ocupación y operación diaria.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="inline-flex items-center gap-1 px-3 py-1 bg-violet-500/10 text-violet-400 rounded border border-violet-500/20 text-sm font-semibold">
+                    Programa de Lealtad
+                  </span>
+                  <span className="inline-flex items-center gap-1 px-3 py-1 bg-emerald-500/10 text-emerald-400 rounded border border-emerald-500/20 text-sm font-semibold">
+                    Gestión de Habitaciones
+                  </span>
+                </div>
+              </div>
+              <div className="flex-1 w-full flex items-center justify-center opacity-30 hover:opacity-50 transition-opacity">
+                <div className="grid grid-cols-3 gap-2 w-48">
+                  <div className="h-12 bg-violet-500/10 rounded-lg border border-violet-500/10" />
+                  <div className="h-12 bg-white/5 rounded-lg border border-white/5" />
+                  <div className="h-12 bg-emerald-500/10 rounded-lg border border-emerald-500/10" />
+                  <div className="h-12 bg-white/5 rounded-lg border border-white/5" />
+                  <div className="h-12 bg-violet-500/10 rounded-lg border border-violet-500/10" />
+                  <div className="h-12 bg-white/5 rounded-lg border border-white/5" />
+                </div>
               </div>
             </CursorGlow>
           </ScrollReveal>
