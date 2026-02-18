@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import TrustSection from './components/TrustSection';
 import ProblemSection from './components/ProblemSection';
 import BentoGrid from './components/BentoGrid';
 import SocialProof from './components/SocialProof';
@@ -18,15 +19,16 @@ const App: React.FC = () => {
 
       {/* Global Background Ambient Effects */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 -left-4 w-96 h-96 bg-electric/5 rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-blob" />
-        <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-purple-500/5 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-blob animation-delay-2000" />
-        <div className="absolute bottom-0 left-20 w-96 h-96 bg-blue-500/5 rounded-full mix-blend-screen filter blur-[80px] opacity-20 animate-blob animation-delay-4000" />
+        <div className="absolute top-0 -left-4 w-96 h-96 bg-electric/5 rounded-full mix-blend-screen blur-[100px] opacity-20 animate-blob" />
+        <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-purple-500/5 rounded-full mix-blend-screen blur-[120px] opacity-20 animate-blob animation-delay-2000" />
+        <div className="absolute bottom-0 left-20 w-96 h-96 bg-blue-500/5 rounded-full mix-blend-screen blur-[80px] opacity-20 animate-blob animation-delay-4000" />
       </div>
 
       <div className="relative z-10">
         <Navbar />
         <main>
           <Hero />
+          <TrustSection />
           <ProblemSection />
           <BentoGrid />
           <SocialProof />

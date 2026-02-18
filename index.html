@@ -5,66 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trinity Corp | Consultoría Tecnológica Boutique para PyMEs</title>
     <meta name="description" content="Transformamos el caos operativo de PyMEs en México en claridad estratégica y rentabilidad medible. Consultoría tecnológica elite desde el Bajío." />
-    <meta name="keywords" content="consultoría tecnológica, PyMEs México, digitalización empresas, Bajío, automatización, software a la medida" />
+    <meta name="keywords" content="consultoría tecnológica, PyMEs México, digitalización empresas, Bajío, automatización, software a la medida, León Guanajuato" />
+    <meta name="author" content="Trinity Corp" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://trinitycorp.mx" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Trinity Corp | Consultoría Tecnológica Boutique" />
     <meta property="og:description" content="Claridad Operativa. Rentabilidad Real. Transformamos PyMEs con tecnología de precisión." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_MX" />
+    <meta property="og:url" content="https://trinitycorp.mx" />
+    <meta property="og:site_name" content="Trinity Corp" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Trinity Corp | Consultoría Tecnológica Boutique" />
+    <meta name="twitter:description" content="Claridad Operativa. Rentabilidad Real. Transformamos PyMEs con tecnología de precisión." />
 
     <!-- Favicon SVG -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%233b82f6'/%3E%3Cstop offset='100%25' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M50 5 L16 65 L36 65 L50 40 L67 35 Z' fill='url(%23g)'/%3E%3Cpath d='M67 35 L95 85 L75 85 L64 65 L50 40 Z' fill='url(%23g)'/%3E%3Cpath d='M75 85 L5 85 L16 65 L64 65 Z' fill='url(%23g)'/%3E%3C/svg%3E" />
 
-    <!-- Fonts: Geist (headings) + Inter (body) -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'system-ui', 'sans-serif'],
-              display: ['"SF Pro Display"', '"Geist"', 'Inter', 'system-ui', 'sans-serif'],
-            },
-            colors: {
-              night: '#020617',
-              electric: '#3b82f6',
-              steel: '#94a3b8',
-            },
-            animation: {
-              'blob': 'blob 7s infinite',
-            },
-            keyframes: {
-              blob: {
-                '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                '100%': { transform: 'translate(0px, 0px) scale(1)' },
-              }
-            }
-          },
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Trinity Corp",
+      "description": "Consultoría Tecnológica Boutique. Transformamos el caos operativo de PyMEs en México en claridad estratégica y rentabilidad medible.",
+      "url": "https://trinitycorp.mx",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 21.1219,
+          "longitude": -101.6810
         },
-      }
+        "geoRadius": "300000"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "León",
+        "addressRegion": "Guanajuato",
+        "addressCountry": "MX"
+      },
+      "serviceType": ["Consultoría Tecnológica", "Desarrollo de Software", "Digitalización Empresarial", "Automatización de Procesos"],
+      "priceRange": "$$$",
+      "knowsAbout": ["Digitalización PyMEs", "Software a la medida", "Automatización", "Dashboards empresariales"],
+      "slogan": "Claridad Operativa. Rentabilidad Real."
+    }
     </script>
-    <style>
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #020617;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #1e293b;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #334155;
-      }
-    </style>
+
+    <!-- Google Analytics — reemplaza G-XXXXXXXXXX con tu Measurement ID -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+
     <script type="importmap">
 {
   "imports": {
@@ -74,7 +81,7 @@
     "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
   }
 }
-</script>
+    </script>
     <link rel="stylesheet" href="/index.css" />
   </head>
   <body class="bg-night text-white antialiased selection:bg-electric selection:text-white">

@@ -1,5 +1,29 @@
+@import "tailwindcss";
+
 /* ═══════════════════════════════════════════════════════════
-   Trinity Corp — Premium Stylesheet
+   Trinity Corp — Theme & Custom Utilities
+   ═══════════════════════════════════════════════════════════ */
+
+@theme {
+  --color-night: #020617;
+  --color-electric: #3b82f6;
+  --color-steel: #94a3b8;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'SF Pro Display', 'Geist', 'Inter', system-ui, sans-serif;
+
+  --animate-blob: blob 7s infinite;
+
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Premium Effects
    ═══════════════════════════════════════════════════════════ */
 
 /* Noise Texture Overlay */
@@ -14,7 +38,7 @@
   background-size: 256px 256px;
 }
 
-/* Text Shimmer Effect */
+/* Text Shimmer */
 @keyframes shimmer {
   0% { background-position: -200% center; }
   100% { background-position: 200% center; }
@@ -36,10 +60,9 @@
   animation: shimmer 6s linear infinite;
 }
 
-/* Animated Gradient Border for Cards */
+/* Animated Gradient Border */
 .gradient-border {
   position: relative;
-  overflow: hidden;
 }
 
 .gradient-border::before {
@@ -60,6 +83,7 @@
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   transition: all 0.6s ease;
+  pointer-events: none;
 }
 
 .gradient-border:hover::before {
@@ -71,89 +95,7 @@
   );
 }
 
-/* Cursor Glow */
-.cursor-glow {
-  position: relative;
-  overflow: hidden;
-}
-
-.cursor-glow .glow-effect {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 1;
-}
-
-.cursor-glow:hover .glow-effect {
-  opacity: 1;
-}
-
-/* Scroll Indicator Animation */
-@keyframes scroll-bounce {
-  0%, 100% { transform: translateY(0); opacity: 1; }
-  50% { transform: translateY(8px); opacity: 0.5; }
-}
-
-.scroll-indicator {
-  animation: scroll-bounce 2s ease-in-out infinite;
-}
-
-/* Animated Progress Bars */
-@keyframes grow-bar {
-  from { width: 0%; }
-}
-
-.animate-bar {
-  animation: grow-bar 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-/* Counter Animation (handled by JS, but smooth number display) */
-.stat-number {
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.02em;
-}
-
-/* Stagger animation delays */
-.stagger-1 { animation-delay: 0ms; }
-.stagger-2 { animation-delay: 150ms; }
-.stagger-3 { animation-delay: 300ms; }
-.stagger-4 { animation-delay: 450ms; }
-
-/* Timeline connector */
-@keyframes draw-line {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-.timeline-line {
-  animation: draw-line 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-/* Floating animation for stats */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
-}
-
-.float-animation {
-  animation: float 4s ease-in-out infinite;
-}
-
-.float-animation-delayed {
-  animation: float 4s ease-in-out 1s infinite;
-}
-
-.float-animation-delayed-2 {
-  animation: float 4s ease-in-out 2s infinite;
-}
-
-/* Premium Glassmorphism base */
+/* Glassmorphism */
 .glass {
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(20px);
@@ -166,17 +108,81 @@
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Pulse ring for "live" indicators */
-@keyframes pulse-ring {
-  0% { transform: scale(1); opacity: 1; }
-  100% { transform: scale(2.5); opacity: 0; }
+/* ═══════════════════════════════════════════════════════════
+   Animations
+   ═══════════════════════════════════════════════════════════ */
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(8px); opacity: 0.5; }
 }
 
-.pulse-ring::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: #3b82f6;
-  animation: pulse-ring 2s ease-out infinite;
+.scroll-indicator {
+  animation: scroll-bounce 2s ease-in-out infinite;
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.float-animation { animation: float 4s ease-in-out infinite; }
+.float-animation-delayed { animation: float 4s ease-in-out 1s infinite; }
+.float-animation-delayed-2 { animation: float 4s ease-in-out 2s infinite; }
+
+@keyframes draw-line {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.timeline-line {
+  animation: draw-line 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.stat-number {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Success Animation (Contact Form)
+   ═══════════════════════════════════════════════════════════ */
+
+@keyframes checkmark-draw {
+  0% { stroke-dashoffset: 24; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.checkmark-path {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  animation: checkmark-draw 0.4s ease-out 0.2s forwards;
+}
+
+@keyframes scale-in {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.success-scale {
+  animation: scale-in 0.3s ease-out forwards;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Mobile: Reduce Motion
+   ═══════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .text-shimmer { animation: none; }
+  .float-animation,
+  .float-animation-delayed,
+  .float-animation-delayed-2 { animation: none; }
+  .scroll-indicator { animation: none; }
+  .animate-blob { animation: none; }
+}
+
+/* Premium scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #020617; }
+::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #334155; }
