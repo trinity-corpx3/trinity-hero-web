@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 interface ScrollRevealProps {
   children: React.ReactNode;
   className?: string;
-  delay?: number; // delay in ms
+  delay?: number;
   enableZoom?: boolean;
 }
 
@@ -33,18 +33,19 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, className = '', d
 
     return () => {
       if (ref.current) {
-        observer.unobserve(ref.current); // eslint-disable-line react-hooks/exhaustive-deps
+        observer.unobserve(ref.current);
       }
     };
   }, [delay]);
 
+  const hiddenClasses = `opacity-0 translate-y-8 blur-sm ${enableZoom ? 'scale-[0.97]' : ''}`;
+  const visibleClasses = `opacity-100 translate-y-0 blur-0 ${enableZoom ? 'scale-100' : ''}`;
+
   return (
     <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out transform ${
-        isVisible 
-          ? `opacity-100 translate-y-0 ${enableZoom ? 'scale-100' : ''}` 
-          : `opacity-0 translate-y-12 ${enableZoom ? 'scale-95' : ''}`
+      className={`transition-all duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform ${
+        isVisible ? visibleClasses : hiddenClasses
       } ${className}`}
     >
       {children}

@@ -1,0 +1,182 @@
+/* ═══════════════════════════════════════════════════════════
+   Trinity Corp — Premium Stylesheet
+   ═══════════════════════════════════════════════════════════ */
+
+/* Noise Texture Overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* Text Shimmer Effect */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    110deg,
+    #3b82f6 0%,
+    #22d3ee 25%,
+    #ffffff 50%,
+    #22d3ee 75%,
+    #3b82f6 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Animated Gradient Border for Cards */
+.gradient-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(59, 130, 246, 0.0) 40%,
+    rgba(59, 130, 246, 0.0) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: all 0.6s ease;
+}
+
+.gradient-border:hover::before {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.4) 0%,
+    rgba(6, 182, 212, 0.2) 50%,
+    transparent 100%
+  );
+}
+
+/* Cursor Glow */
+.cursor-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.cursor-glow .glow-effect {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.cursor-glow:hover .glow-effect {
+  opacity: 1;
+}
+
+/* Scroll Indicator Animation */
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(8px); opacity: 0.5; }
+}
+
+.scroll-indicator {
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+/* Animated Progress Bars */
+@keyframes grow-bar {
+  from { width: 0%; }
+}
+
+.animate-bar {
+  animation: grow-bar 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Counter Animation (handled by JS, but smooth number display) */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Stagger animation delays */
+.stagger-1 { animation-delay: 0ms; }
+.stagger-2 { animation-delay: 150ms; }
+.stagger-3 { animation-delay: 300ms; }
+.stagger-4 { animation-delay: 450ms; }
+
+/* Timeline connector */
+@keyframes draw-line {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.timeline-line {
+  animation: draw-line 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Floating animation for stats */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+.float-animation-delayed {
+  animation: float 4s ease-in-out 1s infinite;
+}
+
+.float-animation-delayed-2 {
+  animation: float 4s ease-in-out 2s infinite;
+}
+
+/* Premium Glassmorphism base */
+.glass {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Pulse ring for "live" indicators */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+.pulse-ring::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #3b82f6;
+  animation: pulse-ring 2s ease-out infinite;
+}

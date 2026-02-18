@@ -14,6 +14,7 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Soluciones', href: '#cases' },
+    { name: 'Proceso', href: '#process' },
     { name: 'Filosofía', href: '#philosophy' },
     { name: 'Contacto', href: '#contact' },
   ];
@@ -25,15 +26,13 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Brand */}
         <div className="flex items-center gap-3 cursor-pointer group">
           <div className="text-white group-hover:text-electric transition-colors duration-300">
-             <Logo className="w-8 h-8 md:w-10 md:h-10" />
+            <Logo className="w-8 h-8 md:w-10 md:h-10" />
           </div>
-          <span className="text-xl font-bold tracking-tight text-white">Trinity Corp</span>
+          <span className="font-display text-xl font-bold tracking-tight text-white">Trinity Corp</span>
         </div>
 
-        {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
@@ -44,12 +43,11 @@ const Navbar: React.FC = () => {
               {link.name}
             </a>
           ))}
-          <a href="#contact" className="bg-white/5 hover:bg-white/10 text-white px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 border border-white/10 backdrop-blur-sm hover:border-white/20">
+          <a href="#contact" className="glass glass-hover text-white px-5 py-2 rounded-full text-sm font-medium transition-all duration-300">
             Iniciar Evolución
           </a>
         </div>
 
-        {/* Mobile Toggle */}
         <div className="md:hidden">
           <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-white p-2">
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -57,7 +55,6 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-night/95 backdrop-blur-xl border-b border-white/10 py-6 px-6 flex flex-col gap-4 shadow-2xl">
           {navLinks.map((link) => (

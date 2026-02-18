@@ -1,6 +1,6 @@
 import React from 'react';
 import { Logo } from './ui/Logo';
-import { Linkedin, Twitter, Mail } from 'lucide-react';
+import { Linkedin, Twitter, Mail, MapPin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -10,20 +10,24 @@ const Footer: React.FC = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-2 mb-6">
               <Logo className="w-8 h-8 text-white" />
-              <span className="text-xl font-bold text-white">Trinity Corp</span>
+              <span className="font-display text-xl font-bold text-white">Trinity Corp</span>
             </div>
-            <p className="text-slate-400 max-w-sm mb-8">
+            <p className="text-slate-400 max-w-sm mb-4">
               Consultoría Tecnológica Boutique.<br/>
               Referente #1 en PyMEs para el Bajío y Centro de México.
             </p>
+            <div className="flex items-center gap-2 text-slate-500 text-sm mb-8">
+              <MapPin className="w-4 h-4" />
+              <span>León, Guanajuato — Hecho con precisión en México.</span>
+            </div>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full glass glass-hover flex items-center justify-center text-slate-400 hover:text-white transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full glass glass-hover flex items-center justify-center text-slate-400 hover:text-white transition-colors">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full glass glass-hover flex items-center justify-center text-slate-400 hover:text-white transition-colors">
                 <Mail size={20} />
               </a>
             </div>
@@ -32,10 +36,10 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-semibold mb-6">Explorar</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-slate-400 hover:text-electric transition-colors">Casos de Éxito</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-electric transition-colors">Servicios</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-electric transition-colors">Sobre Nosotros</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-electric transition-colors">Blog</a></li>
+              <li><a href="#cases" className="text-slate-400 hover:text-electric transition-colors">Casos de Éxito</a></li>
+              <li><a href="#process" className="text-slate-400 hover:text-electric transition-colors">Proceso</a></li>
+              <li><a href="#philosophy" className="text-slate-400 hover:text-electric transition-colors">Filosofía</a></li>
+              <li><a href="#contact" className="text-slate-400 hover:text-electric transition-colors">Contacto</a></li>
             </ul>
           </div>
 
@@ -50,7 +54,15 @@ const Footer: React.FC = () => {
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
           <p>&copy; {new Date().getFullYear()} Trinity Corp. Todos los derechos reservados.</p>
-          <p className="mt-2 md:mt-0">Diseñado en México.</p>
+          <p className="mt-2 md:mt-0 flex items-center gap-1">
+            Diseñado con precisión
+            <span className="inline-block w-4 h-3 rounded-sm overflow-hidden mx-1">
+              <span className="block h-1/3 bg-green-600" />
+              <span className="block h-1/3 bg-white" />
+              <span className="block h-1/3 bg-red-600" />
+            </span>
+            en México
+          </p>
         </div>
       </div>
     </footer>
