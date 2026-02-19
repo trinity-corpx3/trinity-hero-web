@@ -11,7 +11,7 @@ import ScrollReveal from './ui/ScrollReveal';
  * └────────────────────────────────────────────────┘
  */
 const WHATSAPP_NUMBER = '527222921659';
-const WEB3FORMS_KEY = 'TU_ACCESS_KEY_AQUI';
+const WEB3FORMS_KEY = '7654d81d-2516-487a-b78e-5ed6ff392de8';
 
 const sectors = ['Construcción', 'Autolavados', 'Manufactura', 'Retail / Gasolineras', 'Mantenimiento', 'Hoteles / Moteles', 'Otro'];
 
